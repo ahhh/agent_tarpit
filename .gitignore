@@ -1,0 +1,7 @@
+# captured honeypot hits — may contain attacker-submitted data; don't commit
+server/logs/*.jsonl
+
+# python
+server/.venv/
+__pycache__/
+*.pyc
