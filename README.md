@@ -5,6 +5,18 @@ infrastructure *you control* to slow down, deter, and waste the resources of
 automated LLM crawlers and agents that ignore `robots.txt`, rate limits, and other
 access controls.
 
+## TL;DR — run the honeypot webserver
+
+```bash
+cd server
+pip install -r requirements.txt
+python app.py                 # serves the honeypot on http://127.0.0.1:8080
+```
+
+Then hit <http://127.0.0.1:8080/> (benign landing) or <http://127.0.0.1:8080/trap/>
+(the tarpit entry). Trap hits are logged to `server/logs/hits.jsonl`. See
+[Running the service](#running-the-service) for routes and env-var guards.
+
 This is the LLM-agent analogue of a network tarpit. It follows the same defensive
 lineage as:
 
