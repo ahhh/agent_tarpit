@@ -29,6 +29,10 @@ The design is derived from the defensive lessons of research on resource-exhaust
 | `OPERATIONS_RUNBOOK.md` | Deployment, alert handling, evidence collection, reset, and privacy |
 | `EVALUATION_PLAN.md` | Tests and acceptance gates for the honeypot itself |
 | `fixtures/` | Ready-to-render Markdown pages for a fictional application |
+| `techniques/` | Tarpit decoys that waste an unauthorized agent's compute |
+| `context-bombs/` | Guardrail-tripwire decoys that halt an offensive agent by triggering its own model's safety refusal |
+
+The **tarpit** techniques and **context bombs** are complementary: a tarpit assumes the agent keeps going and burns its resources, while a context bomb tries to make the attacker's own model stop — and the resulting halt is itself a high-confidence detection signal. The context-bomb layer is adapted from Tracebit's research, [*Context Bombs*](https://agentic.tracebit.com/context-bombs/); see `context-bombs/README.md` for the design and its safety model.
 
 ---
 
